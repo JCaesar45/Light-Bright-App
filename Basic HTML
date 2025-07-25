@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-Bright App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="circles-container">
+            <!-- circles will be generated dynamically -->
+        </div>
+        <button class="reset-button">Reset</button>
+        <button class="reset-all-button">Reset All</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
