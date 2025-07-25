@@ -1,0 +1,58 @@
+// get elements
+const container = document.querySelector('.container');
+const circlesContainer = document.querySelector('.circles-container');
+const resetButton = document.querySelector('.reset-button');
+const resetAllButton = document.querySelector('.reset-all-button');
+
+// define variables
+let circleCount = 0;
+let colors = ['#ff69b4', '#33cc33', '#6633cc', '#cc6633', '#3366cc'];
+let currentColor = colors[0];
+let currentCircle;
+
+// function to generate circle
+function generateCircle() {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    circle.style.backgroundColor = currentColor;
+    circle.addEventListener('click', () => {
+        changeColor(circle);
+    });
+    circle.addEventListener('dblclick', () => {
+        removeColor(circle);
+    });
+    circlesContainer.appendChild(circle);
+}
+
+// function to change color of a circle
+function changeColor(circle) {
+    currentColor = getRandomColor();
+    circle.style.backgroundColor = currentColor;
+}
+
+// function to remove color from a circle
+function removeColor(circle) {
+    circle.style.backgroundColor = '';
+}
+
+// function to get a random color
+function getRandomColor() {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// add event listeners
+resetButton.addEventListener('click', () => {
+    currentCircle.style.backgroundColor = '';
+});
+
+resetAllButton.addEventListener('click', () => {
+    const circles = document.querySelectorAll('.circle');
+    circles.forEach((circle) => {
+        circle.style.backgroundColor = '';
+    });
+});
+
+// generate initial circles
+for (let i = 0; i < 10; i++) {
+    generateCircle();
+}
