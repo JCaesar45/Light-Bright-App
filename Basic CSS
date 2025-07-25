@@ -1,0 +1,33 @@
+.container {
+    width: 800px;
+    margin: 40px auto;
+}
+
+.circles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.circle:hover {
+    cursor: pointer;
+}
+
+.circle.active {
+    background-color: #ff69b4; /* default color */
+}
+
+.reset-button {
+    margin-top: 20px;
+}
+
+.reset-all-button {
+    margin-left: 10px;
+}
